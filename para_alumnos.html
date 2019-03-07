@@ -112,7 +112,22 @@
 </main>
 
 <script>
-	// Agregar las instrucciones JS para resolver el ejercicio aquí.
+	var selectorInput = $("#camposelector");
+	$("#boton").click(function() {
+		if (selectorInput.val() == "") {
+			alert("Debe ingresar un selector jQuery!");
+		} else if (selectorInput.val()[0] == "$") {
+			var x = eval(selectorInput.val());
+			if (x instanceof jQuery) {
+				x.fadeOut();
+				x.fadeIn();
+				$(".historial").append(selectorInput.val())
+			}
+			selectorInput.val("");
+		} else {
+			selectorInput.val("");
+		}
+	});
 </script>
 
 </body>
