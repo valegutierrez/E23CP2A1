@@ -121,7 +121,8 @@
 			if (x instanceof jQuery) {
 				x.fadeOut();
 				x.fadeIn();
-				$(".historial").append(selectorInput.val())
+				$(".historial").append(selectorInput.val()+ "<br>");
+				$(".seleccionados").append(x.length + "<br>");
 			}
 			selectorInput.val("");
 		} else {
